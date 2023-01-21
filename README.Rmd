@@ -1,0 +1,70 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# loftgaedi
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The purpose of this package is to make air quality data from [loftgaedi.is](https://loftgaedi.is) easily accessible to R users. It does this by providing helper functions -`get_latest()`, `get_dates()` and `get_stations()`- that interface with the API and transform the content to tidy tables.
+
+## Installation
+
+You can install the development version of loftgaedi like so:
+
+``` r
+remotes::install("bgautijonsson/loftgaedi")
+```
+
+## Examples
+
+```{r example}
+library(loftgaedi)
+```
+
+### `get_latest()`
+
+This function provides all air quality data that was recorded in the last 24 hours, updated hourly at approximately 17 minutes past.
+
+```{r}
+d <- get_latest()
+
+dplyr::glimpse(d)
+```
+
+
+
+### `get_dates(dates)`
+
+This function fetches data from the provided dates. The `dates` input must be a vector of dates or coercible to date format.
+
+```{r}
+my_dates <- seq.Date(from = as.Date("2023-01-01"), to = as.Date("2023-01-11"), by = "days")
+d <- get_dates(my_dates)
+
+dplyr::glimpse(d)
+```
+
+### `get_stations()`
+
+This function provides basic information about all stations *(location, activity window, altitude etc.)* in the data.
+
+```{r}
+d <- get_stations()
+
+dplyr::glimpse(d)
+```
+
+
