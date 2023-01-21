@@ -21,7 +21,8 @@ get_dates <- function(dates) {
 
   purrr::map_dfr(
     dates,
-    .get_date
+    .get_date,
+    .progress = TRUE
   )
 
 }

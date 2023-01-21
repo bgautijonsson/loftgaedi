@@ -19,8 +19,8 @@
 
   out <- out |>
     dplyr::select(
-      station = name,
-      station_id = local_id,
+      name,
+      local_id,
       unit,
       resolution,
       verification,
