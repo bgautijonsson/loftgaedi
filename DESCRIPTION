@@ -1,10 +1,10 @@
 Package: loftgaedi
-Title: R pakki til að sækja loftgæðagögn frá loftgaedi.is
+Title: Icelandic Air-Quality Data
 Version: 0.0.0.9000
 Authors@R: 
     person("Brynjólfur Gauti", "Guðrúnar Jónsson", , "bgautijonsson@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package provides a tidy interface to the air quality API at loftgaedi.is.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
