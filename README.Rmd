@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The purpose of this package is to make air quality data from [loftgaedi.is](https://loftgaedi.is) easily accessible to R users. It does this by providing helper functions -`get_latest()`, `get_dates()` and `get_stations()`- that interface with the API and transform the content to tidy tables.
+The purpose of this package is to make air quality data from [loftgaedi.is](https://loftgaedi.is) easily accessible to R users. It does this by providing helper functions -`get_latest()`, `get_dates()` and `get_stations()`- that interface with the API and transform the content to tidy tables. In addition to these, datasets containing all measurements from 2015-01-01 to 2022-12-31 is incudluded as `loftgaedi_2015` up to `loftgaedi_2022`.
 
 ## Installation
 
@@ -67,4 +67,11 @@ d <- get_stations()
 dplyr::glimpse(d)
 ```
 
+
+### `loftgaedi_data`
+
+
+```{r}
+dplyr::glimpse(loftgaedi_2015)
+```
 
