@@ -1,6 +1,6 @@
 Package: loftgaedi
 Title: Icelandic Air-Quality Data
-Version: 0.0.0.9000
+Version: 1.0
 Authors@R: 
     person("Brynjólfur Gauti", "Guðrúnar Jónsson", , "bgautijonsson@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
