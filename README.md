@@ -19,7 +19,8 @@ measurements from 2015-01-01 to 2022-12-31 is incudluded as
 You can install the development version of loftgaedi like so:
 
 ``` r
-remotes::install("bgautijonsson/loftgaedi")
+install.packages("pak")
+pak::pak("bgautijonsson/loftgaedi")
 ```
 
 ## Examples
@@ -37,16 +38,16 @@ last 24 hours, updated hourly at approximately 17 minutes past.
 d <- get_latest()
 
 dplyr::glimpse(d)
-#> Rows: 1,536
+#> Rows: 1,440
 #> Columns: 8
 #> $ name         <chr> "Akureyri Strandgata (við Hof)", "Akureyri Strandgata (vi…
 #> $ local_id     <chr> "STA-IS0052A", "STA-IS0052A", "STA-IS0052A", "STA-IS0052A…
 #> $ unit         <chr> "µg/m3", "µg/m3", "µg/m3", "µg/m3", "µg/m3", "µg/m3", "µg…
 #> $ resolution   <chr> "1h", "1h", "1h", "1h", "1h", "1h", "1h", "1h", "1h", "1h…
 #> $ verification <chr> "óyfirfarin", "óyfirfarin", "óyfirfarin", "óyfirfarin", "…
-#> $ time         <dttm> 2023-01-21 15:00:00, 2023-01-21 14:00:00, 2023-01-21 13:…
+#> $ time         <dttm> 2023-07-24 15:00:00, 2023-07-24 14:00:00, 2023-07-24 13:…
 #> $ variable     <chr> "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO…
-#> $ value        <dbl> 16.485400, 6.241670, 4.454170, 4.916660, 4.022920, 2.1062…
+#> $ value        <dbl> 4.87083, 12.72920, 6.15417, 39.77090, 7.04583, 25.26460, …
 ```
 
 ### `get_dates(dates)`
@@ -57,13 +58,11 @@ must be a vector of dates or coercible to date format.
 ``` r
 my_dates <- seq.Date(from = as.Date("2023-01-01"), to = as.Date("2023-01-11"), by = "days")
 d <- get_dates(my_dates)
-#> ■■■■■■ 18% | ETA: 5s ■■■■■■■■■ 27% | ETA: 5s
-#> ■■■■■■■■■■■■ 36% | ETA: 4s ■■■■■■■■■■■■■■■
-#> 45% | ETA: 4s ■■■■■■■■■■■■■■■■■ 55% | ETA:
-#> 3s ■■■■■■■■■■■■■■■■■■■■ 64% | ETA: 2s
-#> ■■■■■■■■■■■■■■■■■■■■■■■ 73% | ETA: 2s
-#> ■■■■■■■■■■■■■■■■■■■■■■■■■■ 82% | ETA: 1s
-#> ■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 91% | ETA: 1s
+#> ■■■■■■ 18% | ETA: 5s ■■■■■■■■■ 27% | ETA: 5s ■■■■■■■■■■■■ 36% | ETA: 4s
+#> ■■■■■■■■■■■■■■■ 45% | ETA: 4s ■■■■■■■■■■■■■■■■■ 55% | ETA: 3s
+#> ■■■■■■■■■■■■■■■■■■■■ 64% | ETA: 2s ■■■■■■■■■■■■■■■■■■■■■■■ 73% | ETA: 2s
+#> ■■■■■■■■■■■■■■■■■■■■■■■■■■ 82% | ETA: 1s ■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 91% |
+#> ETA: 1s
 
 dplyr::glimpse(d)
 #> Rows: 17,496

@@ -24,8 +24,9 @@ The purpose of this package is to make air quality data from [loftgaedi.is](http
 
 You can install the development version of loftgaedi like so:
 
-``` r
-remotes::install("bgautijonsson/loftgaedi")
+```{r, eval = FALSE}
+install.packages("pak")
+pak::pak("bgautijonsson/loftgaedi")
 ```
 
 ## Examples
